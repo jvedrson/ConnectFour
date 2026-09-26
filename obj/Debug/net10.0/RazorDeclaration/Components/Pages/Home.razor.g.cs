@@ -73,8 +73,14 @@ using ConnectFour.Components.Layout
 #nullable disable
     ;
 #nullable restore
-#line (2,2)-(2,30) "c:\Users\Ederson\Documents\Eder\BYU\2026\term-5\cse325projects\ConnectFour\Components\Pages\Home.razor"
+#line (3,2)-(3,30) "c:\Users\Ederson\Documents\Eder\BYU\2026\term-5\cse325projects\ConnectFour\Components\Pages\Home.razor"
 using ConnectFour.Components
+
+#nullable disable
+    ;
+#nullable restore
+#line (4,2)-(4,22) "c:\Users\Ederson\Documents\Eder\BYU\2026\term-5\cse325projects\ConnectFour\Components\Pages\Home.razor"
+using System.Drawing
 
 #nullable disable
     ;
@@ -90,6 +96,7 @@ using ConnectFour.Components
 #line hidden
 #nullable disable
     )]
+    [global::ConnectFour.Components.Pages.Home.__PrivateComponentRenderModeAttribute]
     #nullable restore
     public partial class Home : global::Microsoft.AspNetCore.Components.ComponentBase
     #nullable disable
@@ -99,6 +106,12 @@ using ConnectFour.Components
         {
         }
         #pragma warning restore 1998
+        private sealed class __PrivateComponentRenderModeAttribute : global::Microsoft.AspNetCore.Components.RenderModeAttribute
+        {
+            private static global::Microsoft.AspNetCore.Components.IComponentRenderMode ModeImpl => InteractiveServer
+            ;
+            public override global::Microsoft.AspNetCore.Components.IComponentRenderMode Mode => ModeImpl;
+        }
     }
 }
 #pragma warning restore 1591

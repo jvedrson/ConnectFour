@@ -96,7 +96,7 @@ using System.Drawing
         }
         #pragma warning restore 1998
 #nullable restore
-#line (55,8)-(114,1) "c:\Users\Ederson\Documents\Eder\BYU\2026\term-5\cse325projects\ConnectFour\Components\Board.razor"
+#line (52,8)-(121,1) "c:\Users\Ederson\Documents\Eder\BYU\2026\term-5\cse325projects\ConnectFour\Components\Board.razor"
 
     private string[] pieces = new string[42];
     private string winnerMessage = string.Empty;
@@ -115,18 +115,28 @@ using System.Drawing
     public Color Player2Color { get; set; } = ColorTranslator.FromHtml("blue");
 
     // Feature 3: Allow the user to select the color of the game pieces
-    private string player1Color = "#ff0000";
-    private string player2Color = "#0000ff";
+    private string boardColor = string.Empty;
+    private string player1Color = string.Empty;
+    private string player2Color = string.Empty;
+
+    private static string ColorToHex(Color color) =>
+        $"#{color.R:X2}{color.G:X2}{color.B:X2}";
 
     protected override void OnInitialized()
     {
         State.ResetBoard();
-        player1Color = $"#{Player1Color.R:X2}{Player1Color.G:X2}{Player1Color.B:X2}";
-        player2Color = $"#{Player2Color.R:X2}{Player2Color.G:X2}{Player2Color.B:X2}";
+        boardColor = ColorToHex(BoardColor);
+        player1Color = ColorToHex(Player1Color);
+        player2Color = ColorToHex(Player2Color);
     }
 
     private void PlayPiece(byte col)
     {
+        if (!string.IsNullOrEmpty(winnerMessage))
+        {
+            return;
+        }
+
         errorMessage = string.Empty;
         try
         {
